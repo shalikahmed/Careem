@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select City</title>
+    <link rel="stylesheet" href="select-city.css">
+</head>
+<body>
+    <!-- The overlay for the background blur effect -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- The select city screen that will slide up -->
+    <div class="select-city-container" id="select-city-container">
+        <div class="select-city-header">
+            <button class="back-btn" id="back-btn">&larr;</button>
+        </div>
+        <div class="city-options">
+            <!-- First option: Use my current location (without arrow) -->
+            <div class="city-option">
+                <img src="./icons/location-icon.png" alt="Location Icon" class="flag" />
+                <span>Use my current location</span>
+            </div>
+            <hr />
+            <!-- Other options with flags and arrows -->
+            <div class="city-option">
+                <img src="flags/bahrain.png" alt="Bahrain Flag" class="flag" />
+                <span>Bahrain</span>
+                <button class="arrow">&#8594;</button>
+            </div>
+            <hr />
+            <div class="city-option">
+                <img src="flags/egypt.png" alt="Egypt Flag" class="flag" />
+                <span>Egypt</span>
+                <button class="arrow">&#8594;</button>
+            </div>
+            <hr />
+            <div class="city-option">
+                <img src="flags/iraq.png" alt="Iraq Flag" class="flag" />
+                <span>Iraq</span>
+                <button class="arrow">&#8594;</button>
+            </div>
+            <hr />
+            <div class="city-option">
+                <img src="flags/jordan.png" alt="Jordan Flag" class="flag" />
+                <span>Jordan</span>
+                <button class="arrow">&#8594;</button>
+            </div>
+            <hr />
+            <div class="city-option">
+                <img src="flags/kuwait.png" alt="Kuwait Flag" class="flag" />
+                <span>Kuwait</span>
+                <button class="arrow">&#8594;</button>
+            </div>
+            <hr />
+            <div class="city-option">
+                <img src="flags/morocco.png" alt="Morocco Flag" class="flag" />
+                <span>Morocco</span>
+                <button class="arrow">&#8594;</button>
+            </div>
+            <hr />
+            <div class="city-option">
+                <img src="flags/pakistan.png" alt="Pakistan Flag" class="flag" />
+                <span>Pakistan</span>
+                <button class="arrow">&#8594;</button>
+            </div>
+            <hr />
+            <div class="city-option">
+                <img src="flags/saudi_arabia.png" alt="Saudi Arabia Flag" class="flag" />
+                <span>Saudi Arabia</span>
+                <button class="arrow">&#8594;</button>
+            </div>
+            <hr />
+            <div class="city-option">
+                <img src="flags/uae.png" alt="UAE Flag" class="flag" />
+                <span>United Arab Emirates</span>
+                <button class="arrow">&#8594;</button>
+            </div>
+            <hr />
+        </div>
+    </div>
+
+    <script src="select-city.js"></script>
+</body>
+</html>

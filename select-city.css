@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
+    height: 100vh;  /* Ensure the body takes up the full viewport height */
+    overflow: hidden;  /* Prevent scrolling on body */
+}
+
+/* Select City Container */
+.select-city-container {
+    border-radius: 15px 15px 0px 0px;
+    position: fixed;
+    bottom: -100%; /* Start hidden off-screen */
+    left: 0;
+    width: 100%;
+    height: 90%; /* Make it take almost full height, leaving some space at the top */
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px; /* Add padding for spacing */
+    z-index: 1000;
+    transition: bottom 0.5s ease-in-out; /* Smooth transition for sliding */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    margin: 0 auto;  /* Center horizontally */
+    max-width: 100%; /* Ensures it takes full width on mobile */
+    box-sizing: border-box; /* Prevents any padding from overflowing */
+    align-items: center;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
+    z-index: 999;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Select City Header */
+.select-city-header {
+    display: flex;
+    justify-content: center;  /* Center the title */
+    align-items: center;
+    width: 100%;  /* Take full width */
+    padding: 10px 20px;
+    margin-top: 20px; /* Space below the header */
+    position: relative; /* To position the back button */
+}
+
+/* Back Button */
+.back-btn {
+    position: absolute;  /* Position it on the left */
+    left: 20px;  /* Align to the left side */
+    background-color: #ffffff;
+    border-radius: 50%;  /* Make it round */
+    padding: 10px;  /* Reduced padding to make the circle smaller */
+    font-size: 24px;  /* Decreased font size for a smaller icon */
+    border: 2px solid black;  /* Black border around the circle */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #00BF63;  /* Change color on hover */
+}
+
+/* City Options */
+.city-options {
+    margin-top: 40px; /* Increase spacing between the header and options */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* City Option */
+.city-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between flag and arrow */
+    width: 90%;
+    padding: 12px;
+    background-color: #ffffff;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    gap: 15px;  /* Space between the elements */
+}
+
+/* Align text to the left next to the flag */
+.city-option span {
+    flex-grow: 1; /* Make the text take the remaining space */
+    margin-left: 10px; /* Space between flag and text */
+}
+
+/* City Option Hover Effect */
+.city-option:hover {
+    background-color: #00BF63;
+    color: white;
+}
+
+/* Arrow button */
+.arrow {
+    font-size: 35px;
+    color: black;
+    background: none;
+    border: none;
+}
+
+/* Flag styling */
+.flag {
+    width: 30px;  /* Set a fixed size for the flags */
+    height: auto;
+}
+
+/* Divider line */
+hr {
+    width: 100%;
+    border: 1px solid #ccc;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+/* For the first option, no arrow */
+.city-option:first-child .arrow {
+    display: none;  /* Hide the arrow for the first item */
+}
