@@ -1,22 +1,49 @@
-let selectedRide = '';
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const navLinksContainer = document.getElementById('nav-links-container');
 
-function selectRide(rideType) {
-    selectedRide = rideType;
-    const rideText = document.getElementById('selected-ride');
-    
-    if (rideType === 'economy') {
-        rideText.textContent = 'Economy - Affordable Rides';
-    } else if (rideType === 'premium') {
-        rideText.textContent = 'Premium - Luxury Rides';
-    } else if (rideType === 'bikes') {
-        rideText.textContent = 'Bikes - Fast and Easy';
-    }
+    // Open menu
+    hamburgerMenu.addEventListener('click', () => {
+        navLinksContainer.style.top = '0'; // Slide down
+    });
+
+    // Close menu
+    closeMenu.addEventListener('click', () => {
+        navLinksContainer.style.top = '-100%'; // Slide up
+    });
+});
+// Get elements
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const navLinksContainer = document.getElementById('nav-links-container');
+const overlay = document.getElementById('overlay');
+const closeButton = document.getElementById('close-menu');
+
+// Function to open the menu
+function openMenu() {
+    navLinksContainer.classList.add('open');
+    overlay.classList.add('visible');
 }
 
-function bookRide() {
-    if (selectedRide === '') {
-        alert('Please select a ride!');
-    } else {
-        alert(`You have booked a ${selectedRide} ride!`);
-    }
+// Function to close the menu and overlay
+function closeMenu() {
+    navLinksContainer.classList.remove('open');
+    overlay.classList.remove('visible');
 }
+
+// Open menu when hamburger icon is clicked
+hamburgerMenu.addEventListener('click', openMenu);
+
+// Close menu when close button is clicked
+closeButton.addEventListener('click', closeMenu);
+
+// Close menu when overlay (blurred screen) is clicked
+overlay.addEventListener('click', closeMenu);
+
+// Close menu when clicking anywhere outside the nav menu and hamburger button
+document.addEventListener('click', function(event) {
+    // Check if the click is outside the menu and hamburger button
+    if (!navLinksContainer.contains(event.target) && !hamburgerMenu.contains(event.target) && !closeButton.contains(event.target)) {
+        closeMenu();
+    }
+});

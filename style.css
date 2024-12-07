@@ -811,3 +811,141 @@ margin-top: 30px;
     opacity: 0.8;
     transition: opacity 0.3s ease;
 }
+/* Navigation menu container */
+.nav-links-container {
+    position: fixed;
+    top: -100%; /* Hidden off-screen initially */
+    left: 0;
+    width: 100%;
+    height: 25%; /* Set height to 25% */
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease; /* Smooth sliding effect */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 40px 40px
+}
+
+/* Close button */
+.close-menu {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    position: absolute;
+    top: 2px;
+    right: 15px;
+    cursor: pointer;
+}
+/* Styling for navigation links */
+.nav-links {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox for horizontal layout */
+    flex-direction: row; /* Keep horizontal layout */
+    gap: 20px; /* Space between the links */
+    align-items: center; /* Center the items vertically */
+}
+
+/* Styling for each list item */
+.nav-links li {
+    display: flex; /* Make the icon and text in a row */
+    flex-direction: column; /* Stack icon and text vertically within each list item */
+    align-items: center; /* Center-align both icon and text */
+    gap: 0px; /* Reduced gap between icon and text */
+}
+
+/* Icon styling */
+.nav-icon {
+    width: 40px; /* Set a fixed size for icons */
+    height: 40px;
+    margin-bottom: 0; /* Remove any margin below the icon */
+}
+
+/* Styling for links */
+.nav-links a {
+    text-decoration: none; /* Remove underline */
+    font-size: 0.8rem; /* Font size */
+    color: #333;
+    font-weight: normal; /* Regular weight for text */
+    padding: 0; /* Remove padding to reduce space */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+    background-color: #f0f0f0;
+    color: #00BF63; /* Change to theme color */
+}
+
+/* Overlay styling */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth fade-in */
+    z-index: 999; /* Just below the nav menu */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+}
+
+/* Mobile menu visibility and blur effect */
+.nav-links-container.open {
+    top: 0; /* Show the nav menu */
+    transition: top 0.3s ease; /* Smooth slide-in effect */
+}
+
+.overlay.visible {
+    visibility: visible; /* Make the overlay visible */
+    opacity: 1; /* Fade-in effect */
+}
+
+/* Mobile menu styles */
+.nav-links-container {
+    position: fixed;
+    top: -100%; /* Hidden off-screen initially */
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links-container.open {
+    top: 0; /* Slide the nav menu in when open */
+}
+
+
+
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: row; /* Ensure horizontal layout on mobile */
+        gap: 15px; /* Space between the links */
+    }
+
+    /* Adjust font size and padding for mobile */
+    .nav-links a {
+        font-size: 0.2rem; /* Slightly smaller font */
+        padding: 12px 18px; /* Adjust padding */
+    }
+}
+
+/* Media query for very small screens (optional) */
+@media (max-width: 480px) {
+    .nav-links a {
+        font-size: 0.8rem; /* Even smaller font for very small screens */
+        padding: 10px 15px; /* Adjust padding */
+    }
+}
