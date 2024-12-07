@@ -175,11 +175,12 @@ body {
     padding: 2px;
     border-radius: 10px;
     text-align: left; /* Align text and buttons to the right */
-    width: 80%; /* Reduce the width */
-    max-width: 400px; /* Set a max-width to prevent it from being too large on big screens */
+    width: 100%; /* Reduce the width */
+    max-width: 500px; /* Set a max-width to prevent it from being too large on big screens */
     margin: 5px auto; /* Center it horizontally */
     line-height: 1.2;
     padding-bottom: 5px;
+
 }
 
 .city-change-text {
@@ -664,6 +665,7 @@ body {
 }
 
 .all-services-img {
+    margin-left: 20px;
     transform: scale(1.8); /* Scale by 1.2 for the All Services image */
 }
 
