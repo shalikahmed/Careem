@@ -1,0 +1,813 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.header {
+    display: flex;
+    justify-content: center; /* Ensures Pay is left and Hamburger is right */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    width: 100%; /* Full width */
+    position: relative; /* Keep it in normal flow or use fixed if needed */
+    margin: 0; /* Remove any default margins */
+}
+
+
+
+
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 120px;
+    align-items: center;
+}
+
+.hamburger-menu-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Define a fixed width for the container */
+    height: 40px; /* Define a fixed height for the container */
+}
+
+.hamburger-menu-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #00493E; /* Green color */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger-menu {
+    color: #00BF63;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1; /* Ensure the hamburger icon is above the circle */
+    margin-bottom: 12px;
+}
+
+
+
+
+.city-change-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.city-name {
+    font-weight: bold;
+    color: #00BF63;
+}
+
+.city-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.select-city-btn, .use-current-location-btn {
+    border: #fff;
+    background-color: #fff;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight:400;
+    width: 45%;
+}
+
+.select-city-btn:hover, .use-current-location-btn:hover {
+    background-color: #00BF63;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 750px) {
+    .header {
+        padding: 10px 15px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 100px;
+        align-items: center;
+    justify-content: center;
+    }
+
+    .hamburger-menu {
+        font-size: 18px;
+    }
+
+    .city-change-box {
+        padding: 15px;
+    }
+
+    .city-change-text {
+        font-size: 14px;
+    }
+
+    .city-buttons {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        align-items: center;
+    }
+
+    .select-city-btn, .use-current-location-btn {
+        width: 80%; /* Make buttons wider on smaller screens */
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 8px 10px;
+        justify-content: space-between; /* Keep items left and right */
+    }
+
+
+    .logo {
+        max-width: 90px;
+        margin-bottom: 10px;
+        align-items: center;
+    justify-content: center;
+    }
+
+    .hamburger-menu {
+        font-size: 20px;
+    }
+
+    .city-change-box {
+        padding: 12px;
+    }
+
+    .city-change-text {
+        font-size: 14px;
+    }
+
+    .city-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .select-city-btn, .use-current-location-btn {
+        width: 80%; /* Adjust button width for smaller devices */
+        margin-bottom: 10px;
+    }
+}
+
+
+/* City Change Box */
+.city-change-box {
+    background-color: #E3E8EC;
+    padding: 2px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: left; /* Align text and buttons to the right */
+    width: 80%; /* Reduce the width */
+    max-width: 400px; /* Set a max-width to prevent it from being too large on big screens */
+    margin: 5px auto; /* Center it horizontally */
+    line-height: 1.2;
+    padding-bottom: 5px;
+}
+
+.city-change-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left; /* Align the text to the right */
+}
+
+.city-name {
+    font-weight: bold;
+    color: #00BF63;
+}
+
+.city-buttons {
+    display: flex;
+    justify-content: flex-start; /* Place buttons next to each other */
+    gap: 10px; /* Add some space between buttons */
+    margin-top: 5px; /* Add top margin to space it out from the text */
+    text-align: right; /* Ensure buttons are aligned to the right */
+}
+
+.select-city-btn, .use-current-location-btn {
+    margin-top: -10px;
+    background-color: #fff;
+    padding: 8px 15px; /* Smaller padding for smaller buttons */
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 11px; /* Smaller font size */
+    width: auto; /* Allow the buttons to shrink based on content */
+}
+
+.select-city-btn:hover, .use-current-location-btn:hover {
+    background-color: #00BF63;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 750px) {
+    .city-change-box {
+        padding: 15px;
+        width: 90%; /* Make the box wider on smaller screens */
+    }
+
+    .city-change-text {
+        font-size:10px;
+    }
+
+    .city-buttons {
+        flex-direction: row; /* Ensure buttons are in a row on larger screens */
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .select-city-btn, .use-current-location-btn {
+        width: auto; /* Buttons will shrink based on content */
+        padding: 6px 12px; /* Smaller padding for smaller buttons */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .city-change-box {
+        padding: 12px;
+        width: 90%; /* Adjust for even smaller screens */
+    }
+
+    .city-change-text {
+        font-size: 14px;
+    }
+
+    .city-buttons {
+        flex-direction: row; /* Ensure buttons are in a row on smaller screens */
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .select-city-btn, .use-current-location-btn {
+        width: auto; /* Allow buttons to be smaller */
+        padding: 6px 10px;
+    }
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Always 4 columns */
+    padding: 10px;
+    margin: 10px auto; /* Center the container */
+    max-width: 1200px; /* Set a maximum width for the container */
+}
+
+
+.service-box {
+    flex: 1 1 150px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 80%;
+    background-color: #EFF5F5;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center;
+}
+.offers-container {
+    text-align: center; /* Center the image */
+    margin-top: -20px;
+}
+
+.offers-img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    display: block;
+    object-fit: cover;
+}
+.top-offers-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    margin-left: 20px; /* Add left margin for spacing */
+}
+.top-offers-container {
+    display: flex;
+    gap: 10px; /* Increased gap for better spacing */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    width: 100%; /* Ensure the container takes full width */
+    margin-left: 18px;
+}
+
+.top-offers-container::-webkit-scrollbar {
+    height: 8px; /* Adjust scrollbar height */
+}
+
+.top-offers-container::-webkit-scrollbar-thumb {
+    background-color: #00BF63;
+    border-radius: 4px;
+}
+
+/* Card styling */
+.offer-card {
+    min-width: 200px; /* Minimum width to ensure horizontal scroll */
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Image styling */
+.offer-image {
+    max-width: 100%; /* Ensure image fits within the card */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners to images */
+}
+
+
+/* Section styling */
+.get-more-section {
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+    
+}
+
+.get-more-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Images container */
+.offer-images-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1px; /* Reduced space between the images */
+    flex-wrap: wrap; /* Allow images to wrap if necessary */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Individual image box */
+.offer-image-box {
+    display: flex;
+    min-width: 150px; /* Minimum width to prevent the images from becoming too small */
+    max-width: 48%; /* Set maximum width for each image box */
+    overflow: hidden; /* Prevent images from overflowing the box */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Image styling */
+.offer-img {
+    width: 100%; /* Make the image fill the box */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Match rounded corners */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .offer-image-box {
+        max-width: 20%; /* Allow images to take full width on smaller screens */
+        display: flex;
+    }
+
+    .offer-images-container {
+        flex-direction: column; /* Stack the images vertically on very small screens */
+        gap: 0; /* Remove space between the images */
+        display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the space between the images */
+    flex-wrap: wrap;
+    }
+    
+}
+.get-more-section {
+    text-align: left; /* Align text to the left */
+   
+}
+
+
+.offer-images-container {
+    justify-content: flex-start; 
+    display: flex;
+    gap: 20px; /* Adjust the space between the images */
+    flex-wrap: wrap; /* Allow images to wrap */
+}
+
+.offer-image-box {
+    flex: 1 1 45%; /* Allow boxes to grow and shrink, take up 45% of the width */
+    max-width: 48%; /* Prevent them from getting too wide */
+    display: flex;
+    justify-content: center; /* Ensure the image is centered */
+    margin-bottom: 10px; /* Space between rows */
+}
+
+.offer-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .offer-images-container {
+
+        flex-direction: row; /* Ensure items stay in a row */
+       justify-content: flex-start;  /* Adjust the alignment on small screens */
+        gap: 10px; /* Reduce space between images */
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+
+    .offer-image-box {
+        flex: 1 1 48%; /* Make sure images take up about half the row */
+        max-width: 48%; /* Set max width to 48% to allow two images per row */
+        margin-bottom: 10px; /* Add space between rows */
+    }
+}
+.pay-section {
+    width: 100vw; /* Set width to 100% of the viewport width */
+    background-color: #001A49; /* Blue background */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.pay-header {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-bottom: 15px;
+}
+
+
+.pay-title {
+    font-size: 20px;
+    color: #ffffff;
+    text-align: left; /* Left align the title */
+    margin: 0; /* Remove default margin */
+}
+
+.pay-cards-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+}
+
+.pay-cards-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.pay-cards-container::-webkit-scrollbar-thumb {
+    background-color: #04160e;
+    border-radius: 4px;
+}
+
+.pay-card {
+    min-width: 180px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(196, 174, 174, 0.1);
+    text-align: center;
+}
+
+.pay-card-img {
+    max-width: 100%;
+    height: auto;
+   margin-left: 0; 
+}
+
+.pay-card-text {
+    font-size: 14px;
+    color: #000000;
+    margin-top: -15px;
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 750px) {
+    .pay-cards-container {
+        gap: 10px;
+    }
+
+    .pay-card {
+        min-width: 150px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pay-cards-container {
+        gap: 5px;
+    }
+
+    .pay-card {
+        min-width: 120px;
+    }
+}/* General Styles */
+.header {
+margin-top: 30px;
+    position: relative; /* Enables absolute positioning for children */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Pay Image */
+.pay-image {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    cursor: pointer; /* Optional: for a clickable appearance */
+}
+
+/* Centered Logo */
+.logo {
+    position: absolute; /* Ensures it's always centered */
+    left: 50%; /* Positions the center of the logo at 50% of the header's width */
+    transform: translateX(-50%); /* Adjusts for the logo's width to perfectly center it */
+    max-width: 200px;
+    height: auto;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+    }
+
+    .pay-image {
+        width: 100px; /* Scales down for mobile */
+    }
+
+    .logo {
+        max-width: 100px; /* Scales down for mobile */
+    }
+
+    .hamburger-menu {
+        height: 15px; /* Slightly smaller for mobile */
+    }
+
+    .hamburger-menu span {
+        width: 20px;
+        height: 2.5px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .services-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust columns on smaller screens */
+        grid-template-columns: repeat(4, 1fr); /* Always 4 columns */
+    }
+
+    .header {
+        padding: 8px 10px; /* Adjust padding to ensure full width */
+    }
+
+    .logo {
+        max-width: 100px; /* Adjust logo size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 5px 10px; /* Further reduce padding */
+        justify-content: space-between; /* Keep elements aligned on small screens */
+    }
+
+    .services-container {
+        grid-template-columns: repeat(4, 1fr); /* Always 4 columns */
+        
+    }
+
+    .city-change-box {
+        height: 80%;
+        width: 90%;
+    }
+}
+.bold-text {
+    font-weight: bold;
+}
+.city-change-text {
+    line-height: 1.5; /* Adjust the value for more or less space between lines */
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+.city-selected-text{
+    font-size: 11px;
+}
+
+.service-img {
+    margin-top: 30px;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center;
+    width: 60px;
+    object-fit: contain; /* Ensures the image scales within the given dimensions without distortion */
+    transition: transform 0.3s ease; /* Add a smooth transition */
+}
+
+
+.rides-img {
+    transform: scale(1.2); /* Scale by 1.2 for the Rides image */
+}
+
+.food-img {
+    transform: scale(3.5); /* Scale by 1.5 for the Food image */
+}
+
+.bike-img {
+    transform: scale(1.3); /* Scale by 1.3 for the Bikes image */
+}
+
+.send-money-img {
+    transform: scale(1.4); /* Scale by 1.4 for the Send Money image */
+}
+
+.dine-out-img {
+    transform: scale(2.0); /* Scale by 1.2 for the Dine Out image */
+}
+
+.home-cleaning-img {
+    transform: scale(1.5); /* Scale by 1.1 for the Home Cleaning image */
+}
+
+.gaza-lebanon-img {
+    transform: scale(1.3); /* Scale by 1.3 for the Gaza & Lebanon image */
+}
+
+.all-services-img {
+    transform: scale(1.8); /* Scale by 1.2 for the All Services image */
+}
+
+    .service-text {
+        font-size: 14px;
+        color: #333; /* Text color */
+        line-height: 1.2; /* Adjust line spacing */
+        text-align: center;
+    }
+
+
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .service-box {
+        flex: 1 1 100px; /* Smaller width for mobile */
+    }
+
+    .service-img {
+        width: 80px; /* Adjust image size for mobile */
+        height: 80px;
+    }
+
+    .service-text {
+        font-size: 10px; /* Smaller font size for mobile */
+    }
+}
+
+/* Media Query for very small screens */
+@media (max-width: 480px) {
+    .service-box {
+        flex: 1 1 80px; /* Further reduce width for very small screens */
+    }
+
+    .service-img {
+        width: 60px; /* Further reduce image size for very small screens */
+        height: 60px;
+    }
+
+    .service-text {
+        font-size: 8px; /* Further reduce font size */
+        word-wrap: break-word; /* Breaks long words */
+    }
+}
+
+.service-box img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.service-box::after {
+    content: ""; /* To handle empty boxes cleanly if needed */
+}
+
+.service-box span, .service-box {
+    font-size: 11px;
+    color: #333;
+}
+
+.services-container {
+    column-gap: 10px; 
+    display: grid;
+    row-gap: 2px;
+    grid-template-columns: repeat(4, 1fr); /* 4 boxes per row */
+    text-align: center;
+}
+
+.service-box {
+   
+    height: 80%;
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center content horizontally */
+    background-color: #EFF5F5;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.service-box img {
+    max-width: 80%;
+    margin-bottom: 10px;
+}
+
+.service-box {
+    font-size: 14px; /* Adjust text size */
+    color: #333; /* Text color */
+    word-wrap: break-word; /* Handle long text gracefully */
+    text-align: center;
+}
+.top-offers-container .offer-card:nth-child(2) .offer-image {
+    transform: translateY(-9px); /* Moves the image 10px down */
+}
+.top-offers-container .offer-card:nth-child(5) .offer-image {
+    transform: translateY(-3px); /* Moves the image 10px down */
+}
+
+
+.pay-img {
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: -30px;
+}
+/* Styling individual images with unique class names */
+.icon1-img {
+    transform: scale(.9); /* Scale by 1.1 for the Home Cleaning image */
+}
+
+.icon2-img {
+   
+    transform: scale(.5); /* Scale by 1.1 for the Home Cleaning image */
+
+}
+
+.icon3-img {
+    transform: scale(.8); /* Scale by 1.1 for the Home Cleaning image */
+}
+
+.icon4-img {
+  
+    transform: scale(.6); /* Scale by 1.1 for the Home Cleaning image */
+}
+
+.icon5-img {
+    transform: scale(0.9); /* Scale by 1.1 for the Home Cleaning image */
+}
+
+.icon6-img {
+    transform: scale(1.5); /* Scale by 1.1 for the Home Cleaning image */
+}
+/* Ensure all images have the same size */
+.pay-card-img {
+    width: 100px;      /* Set the width to be consistent for all images */
+    height: 100px;     /* Set the height to be consistent */
+    margin-bottom: 10px; /* Add some spacing below the image */
+}
+
+/* Optional: If you want all the images to have a circular shape */
+.pay-card-img {
+
+}
+
+/* Align the text (optional) */
+.pay-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the image and text */
+    text-align: center;
+}
+
+/* Optionally, you can add hover effect for the images */
+.pay-card-img:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
