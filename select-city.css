@@ -147,3 +147,7 @@ hr {
     background: none;
     border: none;
 }
+.city-option:hover {
+    background-color: #00BF63;
+    color: white;
+}

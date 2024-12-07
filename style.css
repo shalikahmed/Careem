@@ -5,23 +5,12 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     background-color: #ffffff;
     color: #333;
 }
-
-.header {
-    display: flex;
-    justify-content: center; /* Ensures Pay is left and Hamburger is right */
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    width: 100%; /* Full width */
-    position: relative; /* Keep it in normal flow or use fixed if needed */
-    margin: 0; /* Remove any default margins */
-}
-
-
 
 
 
@@ -39,6 +28,7 @@ body {
     align-items: center;
     width: 40px; /* Define a fixed width for the container */
     height: 40px; /* Define a fixed height for the container */
+    margin-right: 20px;
 }
 
 .hamburger-menu-container::before {
@@ -56,6 +46,7 @@ body {
 }
 
 .hamburger-menu {
+    margin-left: 10px;
     color: #00BF63;
     background: none;
     border: none;
@@ -107,6 +98,7 @@ body {
         padding: 10px 15px;
         justify-content: center;
         align-items: center;
+        position: fixed;
     }
 
     .logo {
@@ -180,7 +172,6 @@ body {
 .city-change-box {
     background-color: #E3E8EC;
     padding: 2px;
-    margin-top: 20px;
     border-radius: 10px;
     text-align: left; /* Align text and buttons to the right */
     width: 80%; /* Reduce the width */
@@ -524,16 +515,26 @@ body {
     }
 }/* General Styles */
 .header {
-margin-top: 30px;
-    position: relative; /* Enables absolute positioning for children */
+    position: fixed;   /* Fix the header to the top */
+    top: 0;
+    left: 0;           /* Align it to the left edge */
+    width: 100%;       /* Ensure it spans the full width */
+    height: 80px;      /* Set a fixed height for the header */
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
+    justify-content: flex-start;  /* Align items to the left */
     background-color: #ffffff;
-    width: 100%;
+    z-index: 100;      /* Ensure it stays on top of other content */
     box-sizing: border-box;
+    overflow: hidden;   /* Prevent overflow on the header */
 }
+
+/* Content below the header should not be overlapped */
+.main-content {
+    padding-top: 60px;  /* Space below header so content doesn't hide behind */
+}
+
+
 
 /* Pay Image */
 .pay-image {
@@ -555,6 +556,7 @@ margin-top: 30px;
 /* Responsive Design */
 @media (max-width: 768px) {
     .header {
+        
         flex-direction: row;
     }
 
@@ -583,6 +585,7 @@ margin-top: 30px;
 
     .header {
         padding: 8px 10px; /* Adjust padding to ensure full width */
+        position: fixed;
     }
 
     .logo {
@@ -592,8 +595,10 @@ margin-top: 30px;
 
 @media screen and (max-width: 480px) {
     .header {
-        padding: 5px 10px; /* Further reduce padding */
+        margin-bottom: 20px;
+        padding-top: 45px; /* Further reduce padding */
         justify-content: space-between; /* Keep elements aligned on small screens */
+        position: fixed;
     }
 
     .services-container {
@@ -602,6 +607,7 @@ margin-top: 30px;
     }
 
     .city-change-box {
+        margin-top: 50px;
         height: 80%;
         width: 90%;
     }
@@ -955,3 +961,11 @@ margin-top: 30px;
     }
 }
 
+.hamburger-menu {
+    margin-right: auto;  /* Push the hamburger menu to the left */
+}
+
+/* Add padding to the body to avoid content being hidden under the header */
+body {
+    padding-top: 60px;  /* Adjust this based on the header's height */
+}
