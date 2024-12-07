@@ -138,3 +138,12 @@ hr {
 .city-option:first-child .arrow {
     display: none;  /* Hide the arrow for the first item */
 }
+.uae-option{
+    color: #00BF63;
+}
+.arrow-uae {
+    font-size: 35px;
+    color: #00BF63;
+    background: none;
+    border: none;
+}
