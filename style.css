@@ -949,3 +949,9 @@ margin-top: 30px;
         padding: 10px 15px; /* Adjust padding */
     }
 }
+@media (max-width: 768px) {
+    .nav-links-container {
+        top: -100%; /* Initially hidden off-screen */
+    }
+}
+

@@ -47,3 +47,6 @@ document.addEventListener('click', function(event) {
         closeMenu();
     }
 });
+if (window.innerWidth <= 768) { // Check if the device is mobile
+    navLinksContainer.style.top = "-100%"; // Hide the menu on load for mobile
+}
