@@ -1,0 +1,168 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    overflow: hidden; /* Prevent scrolling during animation */
+}
+
+/* Pay Container Styling */
+.pay-container {
+    position: fixed;
+    bottom: -100%; /* Start fully off-screen */
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    transition: bottom 0.5s ease; /* Smooth slide-in animation */
+}
+
+/* Show the container */
+.pay-container.show {
+    bottom: 0; /* Slide into view */
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+/* Close Button Circle Container */
+.close-btn-container {
+    width: 30px; /* Diameter of the circle */
+    height: 30px; /* Diameter of the circle */
+    border: 1px solid rgb(59, 59, 59); /* Circle border color */
+    border-radius: 50%; /* Makes it a perfect circle */
+    display: flex; /* Enables flex for centering */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    background-color: transparent; /* Transparent background for circle */
+}
+
+/* Close Button Styling */
+.close-btn {
+    font-size: 24px; /* Close button size */
+    color: rgb(59, 59, 59); /* Close button color */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Remove default padding */
+    display: inline-block; /* Ensures it's treated as a button */
+}
+
+/* Logo Styling */
+.logo {
+    height: 40px;
+    width: auto;
+    transform: scale(2.9);
+}
+
+/* Hamburger Menu Circle Container */
+.hamburger-menu-container {
+    width: 32px; /* Diameter of the circle */
+    height: 32px; /* Diameter of the circle */
+    border: 2px solid #00493E; /* Circle border color */
+    border-radius: 50%; /* Makes it a perfect circle */
+    display: flex; /* Enables flex for centering */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    background-color: #00493E; /* Transparent background for circle */
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+    font-size: 12px; /* Hamburger menu size */
+    color: #00BF63; /* Menu icon color */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Remove default padding */
+    display: inline-block; /* Ensures it's treated as a button */
+}
+
+/* Boxes Container Styling (Flex Layout) */
+.boxes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 10px;
+}
+
+/* Box Styling (Square) */
+.box {
+    background-color: #eff5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%; /* Ensure three boxes per row */
+    height: 100px; /* Adjusted height */
+    box-sizing: border-box;
+}
+
+/* Hover Effect on Boxes */
+.box:hover {
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+/* Image Inside Box */
+.box-img {
+    transform: scale(3.2);
+    max-width: 40%; /* Adjusted image size */
+    max-height: 40%; /* Adjusted image size */
+    margin: 0 auto; /* Center image horizontally */
+    object-fit: contain; /* Ensure image doesn't stretch */
+}
+.box-img-small{
+    transform: scale(2.3);
+    max-width: 40%; /* Adjusted image size */
+    max-height: 40%; /* Adjusted image size */
+    margin: 0 auto; /* Center image horizontally */
+    object-fit: contain; /* Ensure image doesn't stretch */  
+}
+
+/* Text Below Image */
+.box-text {
+    font-size: 8px;
+    font-weight: bolder;
+    color: #000000;
+    margin-top: 20px; /* Space between the image and the text */
+}
+
+/* For Smaller Screens, Adjust Box Size */
+@media (max-width: 1024px) {
+    .box {
+        width: 30%; /* Maintain three boxes per row */
+    }
+}
+
+/* For Even Smaller Screens */
+@media (max-width: 768px) {
+    .box {
+        width: 30%; /* Maintain three boxes per row */
+    }
+}
+
+/* For Very Small Screens */
+@media (max-width: 480px) {
+    .box {
+        width: 30%; /* Maintain three boxes per row */
+    }
+}
