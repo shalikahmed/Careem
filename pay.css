@@ -166,3 +166,91 @@ body {
         width: 30%; /* Maintain three boxes per row */
     }
 }
+/* Stacked Images Section */
+.stacked-images-container {
+    margin-left: 15%;
+    margin-top: -100px;
+    position: relative;
+    width: 80%;
+    height: 350px;
+    display: flex;
+    justify-content: center; /* Centers the image stack */
+    align-items: center;
+}
+
+
+
+/* Left Arrow Positioned Farther Left */
+.nav-arrow.left {
+    left: -120px; /* Moves the left arrow farther away from the image stack */
+}
+
+/* Image Stack */
+.image-stack {
+    position: relative;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual Images */
+.stacked-img {
+    background-color: #ffffff;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(164, 252, 239, 0.66);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    transform: scale(1);
+    opacity: 1;
+
+}
+
+/* First Image */
+.stacked-img:nth-child(1) {
+    z-index: 2;
+    transform: translate(0, 0);
+}
+
+/* Second Image (Slightly Offset) */
+.stacked-img:nth-child(2) {
+    z-index: 1;
+    transform: translate(-30px, 30px) scale(0.9);
+    opacity: 0.7;
+}
+/* General Styling for Navigation Arrows */
+.nav-arrow {
+background-color: transparent;
+border: transparent;
+color: #595959;
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+    cursor: pointer;
+    font-weight: 100;
+    z-index: 3;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Position the Left Arrow */
+.left-arrow {
+left: -50px; /* Moves the left arrow farther away from the image stack */
+}
+
+/* Position the Right Arrow */
+.right-arrow {
+    right: -30px; /* Moves the right arrow farther away from the image stack */
+}
+
+/* Arrow Hover Effect */
+.nav-arrow:hover {
+    transform: scale(1.1) translateY(-50%);
+}
