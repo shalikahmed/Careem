@@ -475,3 +475,6 @@ body.dimmed {
     border-top-right-radius: 30px; /* Example: no rounded corners when closed */
     /* You can add any other styles for the closed state */
 }
+/* Ensure terms button is above the slider */
+
+/* For smaller screens */

@@ -18,24 +18,23 @@
     <!-- Overlay for blur effect -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- Add this below the hamburger button -->
     <div class="nav-links-container" id="nav-links-container">
-        <button id="close-menu" class="close-menu">&times;</button>
+        <button id="close-menu" class="close-menu">&times;</button> <!-- Updated ID -->
         <ul class="nav-links">
             <li>
-                <img src="./image/home-icon.png" alt="Home Icon" class="nav-icon"> <!-- Home Icon -->
+                <img src="./image/home-icon.png" alt="Home Icon" class="nav-icon">
                 <a href="#home">Home</a>
             </li>
             <li>
-                <img src="./image/help-icon.png" alt="Help Icon" class="nav-icon"> <!-- Help Icon -->
+                <img src="./image/help-icon.png" alt="Help Icon" class="nav-icon">
                 <a href="#help">Help</a>
             </li>
             <li>
-                <img src="./image/activities-icon.png" alt="Activities Icon" class="nav-icon"> <!-- Activities Icon -->
+                <img src="./image/activities-icon.png" alt="Activities Icon" class="nav-icon">
                 <a href="#activities">Activities</a>
             </li>
             <li>
-                <img src="./image/profile-icon.png" alt="Profile Icon" class="nav-icon"> <!-- Profile Icon -->
+                <img src="./image/profile-icon.png" alt="Profile Icon" class="nav-icon">
                 <a href="#profile">Profile</a>
             </li>
         </ul>
@@ -57,9 +56,9 @@
     
     <!-- Services Section -->
     <div class="services-container">
-        <div class="service-box">
-            <img src="./image/rides.avif" alt="Rides" class="service-img rides-img"> Rides
-        </div>
+        <div class="service-box" onclick="window.location.href='./Rides/rides.html'">
+            <img src="./image/rides.avif" onclick="window.location.href='./Rides/rides.html'" alt="Rides" class="service-img rides-img"> Rides
+        </div>        
         <div class="service-box">
             <img src="./image/food.png" alt="Food" class="service-img food-img"> Food
         </div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rides</title>
+    <link rel="stylesheet" href="rides.css">
+</head>
+<body>
+    <div class="header">
+        <div class="vignette"></div>
+        <button id="close-menu-head" class="close-menu-head" onclick="window.location.href='../index.html'">&times;</button>
+        <img src="./Images/rides-logo.png" alt="Logo" class="logo">
+        <div class="hamburger-menu-container">
+            <button class="hamburger-menu">&#9776;</button>
+        </div>
+    </div>
+   
+    <!-- Overlay for blur effect -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="nav-links-container" id="nav-links-container">
+        <button id="close-menu" class="close-menu">&times;</button>
+        <ul class="nav-links">
+            <li><img src="./image/home-icon.png" alt="Home Icon" class="nav-icon"><a href="#home">Home</a></li>
+            <li><img src="./image/help-icon.png" alt="Help Icon" class="nav-icon"><a href="#help">Help</a></li>
+            <li><img src="./image/activities-icon.png" alt="Activities Icon" class="nav-icon"><a href="#activities">Activities</a></li>
+            <li><img src="./image/profile-icon.png" alt="Profile Icon" class="nav-icon"><a href="#profile">Profile</a></li>
+        </ul>
+    </div>
+
+    <!-- Google Maps Embed -->
+    <iframe
+    id="map"
+    src="https://maps.google.com/?ie=UTF8&t=m&ll=26.2164639,50.585161&spn=0.003381,0.017231&z=12&output=embed"
+    width="100%" style="border: 0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <div id="ad-container">
+                <img src="Images/ad.png" alt="Advertisement" id="ad-image">
+            </div>
+            <!-- Slider Container -->
+<!-- Slider Container -->
+
+
+
+    <script src="rides.js"></script>
+</body>
+</html>
