@@ -212,7 +212,7 @@ body {
 
 /* Ad Container */
 #ad-container {
-    position: absolute; /* The ad will be positioned relative to the body */
+    position: static; /* The ad will be positioned relative to the body */
     bottom: 220px; /* Place the ad above the slider */
     left: 50%;
     transform: translateX(-50%); /* Center the ad horizontally */
@@ -220,6 +220,7 @@ body {
 }
 
 #ad-image {
+    position: static;
     width: 100%; /* Make the ad image responsive */
     max-width: 600px; /* Optional: Set a max width for the ad */
     height: auto; /* Maintain aspect ratio */
