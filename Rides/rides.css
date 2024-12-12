@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     position: relative; /* So that absolute elements are positioned relative to the body */
 }
 iframe {
@@ -158,23 +158,22 @@ iframe {
     cursor: pointer;
 }
 
-#map-container {
-    width: 100%;
-    height: 100vh; /* Full screen */
-    background-image: url("https://maps.google.com/?ie=UTF8&t=m&ll=26.2164639,50.585161&spn=0.003381,0.017231&z=12&output=embed");
-    background-size: cover;
-    background-position: center;
-    position: absolute; /* Positioned absolutely inside body */
-    top: 0;
+#map {
+    position: relative; /* Ensure the map is positioned relative to its container */
+    top: 0; /* Start from the top (you can adjust this dynamically) */
     left: 0;
-    z-index: 1; /* Ensure the map is the lowest layer */
-}
+    width: 100%;
+    transition: top 0.3s ease; /* Smooth movement when updating the top position */
+    z-index: 1; /* Ensure it doesn’t overlap with higher elements */
+    margin-bottom: 360px;
+    }
+
 
 /* Vignette effect at the top */
 .vignette {
     z-index: 1;
     position: absolute;
-    top: 0;
+    top: 100;
     left: 0;
     width: 100%;
     height: 120px; /* Adjust height based on how much of the screen you want to vignette */
@@ -202,12 +201,22 @@ iframe {
     width: 100%; /* Make the ad image responsive */
     height: auto; /* Maintain aspect ratio */
 }
+
+/* Optional: Apply some styling for better visual appearance */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Ad Container */
 #ad-container {
     position: absolute; /* The ad will be positioned relative to the body */
-    bottom: 300px; /* Place the ad near the bottom of the screen */
+    bottom: 250px; /* Place the ad above the slider */
     left: 50%;
     transform: translateX(-50%); /* Center the ad horizontally */
-    z-index: 2; /* Ensure the ad appears on top of the map */
+    z-index: 3; /* Ensure the ad is above the map but below the slider */
 }
 
 #ad-image {
@@ -215,10 +224,120 @@ iframe {
     max-width: 600px; /* Optional: Set a max width for the ad */
     height: auto; /* Maintain aspect ratio */
 }
+/* Slider container */
 
-/* Optional: Apply some styling for better visual appearance */
-body {
+/* Slider handle */
+.slider-handle {
+    width: 50px;
+    height: 6px;
+    background-color: #3b3b3b;
+    border-radius: 3px;
+    margin: 00px auto;
+    cursor: grab;
+}
+#slider-container {
+    position: fixed;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 300px; /* Reduce height to fit everything */
+    background-color: #ffffff;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    transition: bottom 0.3s ease-in-out;
+    z-index: 4;
+    padding: 10px 20px; /* Reduced padding to save space */
+    box-sizing: border-box;
+}
+
+#slider-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensure items are stacked at the top */
+    height: 100%;
+}
+
+.where-to {
+    font-size: 16px;
+    font-weight: bolder;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 5px; /* Further reduced margin */
+}
+
+.where-to span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.icons {
+    display: flex;
+    gap: 12px; /* Reduced gap between icons */
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-top: 5px; /* Further reduced margin */
+}
+
+.home-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 6px; /* Reduced margin */
+}
+
+.building-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.address {
+    margin-top: 10px; /* Reduced margin */
+    font-size: 12px;
+    color: #3f3f3f;
+    line-height: 1.4;
+}
+
+#confirm-dropout {
+    margin-top: 10px; /* Further reduced margin */
+    padding: 12px 15px; /* Reduced padding */
+    background-color:#01342d ;
+    color: #00BF63;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px; /* Slightly smaller font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+}
+
+#confirm-dropout:hover {
+    background-color: #009c4d;
+    transform: scale(1.05);
+}
+
+#slider-handle {
+    width: 50px;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 3px;
+    margin: 10px auto;
+    cursor: grab;
 }
