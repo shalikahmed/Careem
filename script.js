@@ -50,3 +50,22 @@ document.addEventListener('click', function(event) {
 if (window.innerWidth <= 768) { // Check if the device is mobile
     navLinksContainer.style.top = "-100%"; // Hide the menu on load for mobile
 }
+// script.js
+
+// Wait for the entire page to load
+window.onload = function() {
+    // Show splash screen for 3 seconds (can be adjusted)
+    setTimeout(function() {
+        // Hide splash screen by fading it out
+        document.getElementById('splash-screen').style.opacity = 0;
+
+        // After splash screen fades out, hide it completely
+        setTimeout(function() {
+            document.getElementById('splash-screen').style.display = 'none';
+            
+            // Reveal the main content with a fade-in effect
+            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('main-content').style.opacity = 1;
+        }, 1000); // Matches the transition time for fade-out of splash screen
+    }, 3000); // Duration for how long the splash screen is shown (in ms)
+};
