@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="splash-screen">
-        <img src="splashscreen.svg" alt="Logo" id="logo">
-    </div>
+
     <div class="header">
         <img src="./image/pay.png" alt="Pay"onclick="window.location.href='pay.html'" class="pay-image">
         <img src="./image/logo.png" alt="Logo" class="logo">
@@ -156,5 +154,11 @@
         </div>
     </section>
     <script src="script.js"></script>
+    <script>
+        // Ensure main content is visible after splash screen
+        window.onload = function() {
+            document.getElementById('main-content').style.display = 'block';
+        };
+    </script>
 </body>
 </html>
