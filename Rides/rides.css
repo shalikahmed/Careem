@@ -213,7 +213,7 @@ body {
 /* Ad Container */
 #ad-container {
     position: absolute; /* The ad will be positioned relative to the body */
-    bottom: 250px; /* Place the ad above the slider */
+    bottom: 220px; /* Place the ad above the slider */
     left: 50%;
     transform: translateX(-50%); /* Center the ad horizontally */
     z-index: 3; /* Ensure the ad is above the map but below the slider */
@@ -237,7 +237,7 @@ body {
 }
 #slider-container {
     position: fixed;
-    bottom: -50px;
+    bottom: -80px;
     left: 0;
     width: 100%;
     height: 300px; /* Reduce height to fit everything */
