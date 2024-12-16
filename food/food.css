@@ -400,24 +400,3 @@ body {
     height: 20px;  /* Adjust height */
     object-fit: contain;  /* Ensure the icon scales properly */
 }
-.close-btn-container {
-    width: 30px; /* Diameter of the circle */
-    height: 30px; /* Diameter of the circle */
-    border: 1px solid rgb(59, 59, 59); /* Circle border color */
-    border-radius: 50%; /* Makes it a perfect circle */
-    display: flex; /* Enables flex for centering */
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    background-color: transparent; /* Transparent background for circle */
-}
-
-/* Close Button Styling */
-.close-btn {
-    font-size: 24px; /* Close button size */
-    color: rgb(59, 59, 59); /* Close button color */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0; /* Remove default padding */
-    display: inline-block; /* Ensures it's treated as a button */
-}
