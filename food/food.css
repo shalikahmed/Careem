@@ -211,6 +211,7 @@ body {
 
 /* Filters Container */
 .filters-container {
+    position: fixed;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -276,10 +277,10 @@ body {
 }
 /* Image Slider Container (Move it above) */
 .image-slider-container {
+    gap: 20px;
     position: relative;
     width: 100%;
     height: 80vh; /* Set the height of the container */
-    margin: 20px auto 0; /* Move it above and add space above */
     overflow: hidden; /* Hide images that are outside the view */
     z-index: 1; /* Ensure it stays above other elements if needed */
 }
@@ -287,6 +288,7 @@ body {
 /* Slider */
 .image-slider {
     display: flex;
+    gap: 30px;
     scroll-snap-type: x mandatory; /* Ensure smooth horizontal snapping */
     overflow-x: auto; /* Enable horizontal scroll */
     -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on mobile */
@@ -295,6 +297,7 @@ body {
 
 /* Image Styling */
 .slider-image {
+    gap: 20px;
     width: 90%; /* Make images smaller */
     height: 100%; /* Keep the height of images consistent */
     object-fit: cover; /* Make sure the images cover the area properly */
@@ -386,3 +389,4 @@ body {
 .image-slider::-webkit-scrollbar {
     display: none;  /* For Chrome, Safari, and Edge */
 }
+
