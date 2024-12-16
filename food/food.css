@@ -390,3 +390,13 @@ body {
     display: none;  /* For Chrome, Safari, and Edge */
 }
 
+.dropdown-icon {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #000;
+    cursor: pointer;
+    width: 20px;  /* Adjust width */
+    height: 20px;  /* Adjust height */
+    object-fit: contain;  /* Ensure the icon scales properly */
+}
