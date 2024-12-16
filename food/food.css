@@ -1,0 +1,408 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: #ffffff;
+    padding: 0 15px;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Close Button */
+.close-menu-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    background: #ffffff;
+    font-size: 1.5rem;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+/* Deliver Section */
+.deliver-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    gap: 5px;
+    flex: 1;
+}
+
+.deliver-text {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.address {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.dropdown-icon {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Hamburger Menu */
+.hamburger-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00493E;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    margin-left: auto;
+}
+
+.hamburger-menu {
+    color: #00BF63;
+    font-size: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hamburger Menu Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+
+.overlay.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Hamburger Menu Container */
+.nav-links-container {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 40px 40px;
+}
+
+.nav-links-container.open {
+    top: 0;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    position: absolute;
+    top: 2px;
+    right: 15px;
+    cursor: pointer;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00BF63;
+}.search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 100px 15px 10px 15px; /* Adjust to push it below the header */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Rounded edges for the bar */
+    background-color: #fff;
+    position: relative;
+}
+
+.search-bar {
+    flex: 1; /* Take all available space except for the icon */
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+    background: transparent;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.search-bar::placeholder {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.search-icon {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    margin-left: 10px; /* Space between text and icon */
+    cursor: pointer;
+}
+
+.search-bar::placeholder {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Filters Container */
+.filters-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 15px; /* Spacing below the search bar */
+    padding: 5px 0;
+    position: relative;
+}
+
+/* Fixed Filter Icon */
+.filter-icon-container {
+    position: sticky; /* Keep it fixed */
+    left: 0; /* Stick to the left edge */
+    z-index: 10; /* Ensure it stays on top */
+    background-color: #ffffff; /* Match background to avoid overlap */
+    padding-right: 10px; /* Add spacing between the icon and buttons */
+    flex-shrink: 0; /* Prevent shrinking */
+    border: #333;
+}
+
+.filter-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.filter-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Scrollable Filter Buttons */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+    scrollbar-width: none; /* Hide scrollbar for modern browsers */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    flex-grow: 1;
+}
+
+.filter-buttons::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.filter-btn {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Rounded edges */
+    background-color: #fff;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent text from wrapping */
+    flex-shrink: 0; /* Ensure buttons don't shrink */
+    transition: all 0.3s ease;
+}
+/* Image Slider Container (Move it above) */
+.image-slider-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Set the height of the container */
+    margin: 20px auto 0; /* Move it above and add space above */
+    overflow: hidden; /* Hide images that are outside the view */
+    z-index: 1; /* Ensure it stays above other elements if needed */
+}
+
+/* Slider */
+.image-slider {
+    display: flex;
+    scroll-snap-type: x mandatory; /* Ensure smooth horizontal snapping */
+    overflow-x: auto; /* Enable horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on mobile */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+/* Image Styling */
+.slider-image {
+    width: 90%; /* Make images smaller */
+    height: 100%; /* Keep the height of images consistent */
+    object-fit: cover; /* Make sure the images cover the area properly */
+    scroll-snap-align: center; /* Ensure each image snaps to the center */
+}
+
+
+/* Optional: To add a little effect when hovering */
+.slider-image:hover {
+    transform: scale(1.05);
+}
+/* First image */
+.image-slider .slider-image:nth-child(1) {
+    /* Example: Add a red border to the first image */
+}
+
+/* Second image */
+.image-slider .slider-image:nth-child(2) {
+
+    height: 245px;
+    
+   
+}
+
+/* Third image */
+.image-slider .slider-image:nth-child(3) {
+    /* Example: Make the third image slightly transparent */
+}
+
+/* Fourth image */
+.image-slider .slider-image:nth-child(4) {
+   /* Example: Enlarge the fourth image */
+}
+
+/* Fifth image */
+.image-slider .slider-image:nth-child(5) {
+     /* Example: Add rounded corners to the fifth image */
+     margin-top: -8px;
+}
+
+/* Sixth image */
+.image-slider .slider-image:nth-child(6) {
+    /* Example: Add a shadow to the sixth image */
+}
+/* Container holding the entire icon slider */
+/* Container holding the entire icon slider */
+.icon-slider-container {
+    width: 100%; /* Ensure it takes full width of the container */
+    overflow-x: hidden; /* Hide horizontal overflow (so only the row scrolls) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Make it relative for better control */
+    top: -480px; /* Adjusts the position without affecting scroll */
+    z-index: 1; /* Ensure it stays above other content */
+  }
+  
+  /* Row that holds all icons */
+  .icon-row {
+    display: flex;
+    gap: 15px; /* Space between icons */
+    width: 100%; /* Ensure full width */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding-bottom: 20px; /* Avoid clipping */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile */
+    flex-wrap: nowrap; /* Prevent wrapping and ensure all icons are in one row */
+  }
+  
+  /* Individual icon styling */
+  .icon {
+    min-width: 120px; /* Ensure icons have enough width to create overflow */
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking of icons */
+  }
+  
+  /* Icon image styling */
+  .icon-image {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    object-fit: cover;
+    margin-bottom: 8px;
+  }
+  
+  /* Icon hover effect */
+  .icon:hover {
+    background-color: #00BF63;
+    color: white;
+  }
+  
+  /* Text styling below icon */
+  .icon span {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .icon-row::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar in Webkit browsers */
+  } 
+   .image-slider::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar in Webkit browsers */
+  }
