@@ -392,6 +392,7 @@ body {
     object-fit: cover; /* Maintain aspect ratio and fill the container */
     border-radius: 8px; /* Optional: Add rounded corners */
     transition: transform 0.3s ease;
+    
 }
 
 .icon-row img:hover {
@@ -512,8 +513,10 @@ body {
     gap: 20px; /* space between items */
     margin: 20px; /* margin around the container */
     overflow-x: auto;  /* Allow horizontal scrolling if the container overflows */
-    padding-bottom: 50px; /* Add padding to bottom to ensure scroll is visible */
-  }
+    padding-bottom: 10px; /* Add padding to bottom to ensure scroll is visible */
+    overflow-y: hidden; 
+
+}
   .food-container::-webkit-scrollbar {
     display: none; /* Hide scrollbar for WebKit browsers (Chrome, Safari, etc.) */
 }
@@ -569,4 +572,302 @@ h3 {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+.inspiration-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 0px;
+    background-color: #fff; /* Optional: Add background color */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+.text-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px; /* Adjust font size as needed */
+    color: #000; /* Black for bold text */
+    margin: 0; /* Remove default margin */
+}
+
+.subtitle {
+    font-size: 14px; /* Smaller font size for subtitle */
+    color: gray; /* Gray for subtitle */
+    margin: 5px 0 0 0; /* Add spacing below the title */
+}
+
+.arrow-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    font-size: 24px; /* Adjust size for the arrow */
+    font-weight: bold;
+    color: #000; /* Black arrow color */
+    cursor: pointer; /* Indicate it's clickable */
+    transition: transform 0.2s ease;
+}
+
+.arrow:hover {
+    transform: translateX(5px); /* Add a slight movement on hover */
+}
+.inspiration-images-container {
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    gap: 15px; /* Space between images */
+    padding: 10px 0; /* Vertical padding */
+    overflow-x: auto; /* Make the images horizontally scrollable */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE */
+}
+
+.inspiration-images-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
+}
+
+.inspiration-image {
+    width: 180px; /* Reduced width */
+    height: auto; /* Let height adjust based on the width to maintain aspect ratio */
+    object-fit: contain; /* Scale the image to fit the container without cropping */
+    border-radius: 10px; /* Rounded corners */
+    flex-shrink: 0; /* Prevent shrinking of images */
+    transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+.inspiration-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.inspiration-footer {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.footer-text {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.emoji {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.text {
+    font-size: 18px;
+}
+
+.footer-subtext {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.subtext {
+    font-size: 16px;
+    color: gray;
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 30px;
+}
+
+.arrow {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.arrow:hover {
+    transform: translateX(5px);
+}
+.restaurant-container {
+    background-color: #fcfcfc;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    gap: 15px; /* Space between the boxes */
+    padding: 10px 0; /* Vertical padding */
+    overflow-x: auto; /* Horizontal scrolling */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE */
+}
+.restaurant-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
+}
+
+.restaurant-box {
+    border: 1px solid #adadad; /* Add border to each box */
+    border-radius: 10px;
+    width: 180px; /* Reduced width of each box */
+    flex-shrink: 0; /* Prevent shrinking of boxes */
+}
+
+.food-image {
+    
+    width: 100%;
+    height: 120px; /* Reduced image height */
+    object-fit: cover; /* Ensure image covers without distortion */
+    border-radius: 10px 10px 0 0; /* Rounded corners at top */
+}
+
+.restaurant-details {
+    padding: 8px; /* Reduced padding */
+    background-color: #fff;
+    border-radius: 0 0 10px 10px; /* Rounded corners at bottom */
+}
+
+.restaurant-name {
+    font-size: 16px; /* Slightly smaller font size */
+    font-weight: bold;
+}
+
+.rating-duration {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.star-icon {
+    width: 14px; /* Smaller star icon */
+    height: 14px;
+}
+
+.duration {
+    font-size: 12px; /* Slightly smaller font size */
+}
+
+.cuisine-distance {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px; /* Smaller font size for cuisine and distance */
+}
+.new-on-careem-container {
+    margin: 20px;
+}
+
+.new-on-careem-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.new-on-careem-images {
+    display: flex;
+    gap: 10px; /* Space between images */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding-bottom: 10px; /* Padding at the bottom for scroll */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE */
+}
+
+.new-on-careem-images::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
+}
+
+.careem-image {
+    width: 180px; /* Reduced width */
+    height: auto; /* Let height adjust based on the width to maintain aspect ratio */
+    object-fit: contain; /* Scale the image to fit the container without cropping */
+    border-radius: 10px; /* Rounded corners */
+    flex-shrink: 0; /* Prevent shrinking of images */
+    transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+.all-restaurants-section {
+    margin-top: 0px; /* Space between New on Careem and All Restaurants */
+}
+
+.all-restaurants-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px; /* Align it to the left */
+}
+.r-restaurants-container {
+    margin: 20px;
+}
+
+.r-restaurant-box {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0px; /* Increased space between restaurant boxes */
+    padding: 15px;
+    border-bottom: 1px solid #2c2c2c; /* Thin line separator */
+}
+
+.r-restaurant-image-container {
+    margin-right: 15px; /* Space between image and details */
+}
+
+.r-restaurant-image {
+    width: 120px; /* Longer image width (left and right) */
+    height: 150px; /* Shorter image height (top and bottom) */
+    object-fit: cover; /* Ensures the image covers the area */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 0px; /* Space from the bottom */
+}
+
+.r-restaurant-details {
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    flex: 1; /* Takes remaining space */
+}
+
+.r-restaurant-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px; /* Space below the restaurant name */
+}
+
+.r-rating-duration {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Space between rating and duration */
+}
+
+.r-star-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.r-duration {
+    font-size: 14px;
+}
+
+.r-cuisine {
+    font-size: 14px;
+    margin-bottom: 5px; /* Space between cuisine and city/distance */
+}
+
+.r-city-distance {
+    display: flex;
+    gap: 10px;
+    flex-direction: row; /* Stack city and distance vertically */
+}
+
+.r-city {
+    font-size: 14px;
+}
+
+.r-distance {
+    font-size: 14px;
 }
