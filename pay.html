@@ -9,51 +9,55 @@
 <body>
     <div id="pay-container" class="pay-container">
         <div id="background-overlay" class="background-overlay">
-        <div class="header">
-            <!-- Close Button -->
-            <div class="close-btn-container">
-                <button class="close-btn" onclick="window.location.href='index.html'">&times;</button>
+            <div class="header">
+                <!-- Close Button -->
+                <div class="close-btn-container">
+                    <button class="close-btn" onclick="window.location.href='index.html'">&times;</button>
+                </div>
+                <!-- Logo in the Center -->
+                <img src="./pay-images/pay.png" alt="Logo" class="logo">
+                <!-- Hamburger Menu with Circle -->
+                <div class="hamburger-menu-container">
+                    <button class="hamburger-menu">&#9776;</button>
+                </div>
             </div>
-            <!-- Logo in the Center -->
-            <img src="./pay-images/pay.png" alt="Logo" class="logo">
-            <!-- Hamburger Menu with Circle -->
-            <div class="hamburger-menu-container">
-                <button class="hamburger-menu">&#9776;</button>
-            </div>
-        </div>
 
-        <!-- Boxes Container -->
-        <div class="boxes-container">
-            <div class="box">
-                <img src="icons/image-1.png" alt="Image 1" class="box-img">
-                <p class="box-text">Send Money</p>
-            </div>
-            <div class="box">
-                <img src="icons/image-2.png" alt="Image 2" class="box-img">
-                <p class="box-text">Pay Someone</p>
-            </div>
-            <div class="box">
-                <img src="icons/image-3.png" alt="Image 3" class="box-img-small">
-                <p class="box-text">Bills & Recharges</p>
-            </div>
-            <div class="box">
-                <img src="icons/image-4.png" alt="Image 4" class="box-img">
-                <p class="box-text">Split Payments</p>
-            </div>
-            <div class="box">
-                <img src="icons/image-5.png" alt="Image 5" class="box-img">
-                <p class="box-text">Request Money</p>
-            </div>
-            <div class="box">
-                <img src="icons/image-6.png" alt="Image 6" class="box-img">
-                <p class="box-text">Right Click</p>
+            <!-- Boxes Container -->
+            <div class="boxes-container">
+                <div class="box">
+                    <img src="icons/image-1.png" alt="Image 1" class="box-img">
+                    <p class="box-text">Send Money</p>
+                </div>
+                <div class="box">
+                    <img src="icons/image-2.png" alt="Image 2" class="box-img">
+                    <p class="box-text">Pay Someone</p>
+                </div>
+                <div class="box">
+                    <img src="icons/image-3.png" alt="Image 3" class="box-img-small">
+                    <p class="box-text">Bills & Recharges</p>
+                </div>
+                <div class="box">
+                    <img src="icons/image-4.png" alt="Image 4" class="box-img">
+                    <p class="box-text">Split Payments</p>
+                </div>
+                <div class="box">
+                    <img src="icons/image-5.png" alt="Image 5" class="box-img">
+                    <p class="box-text">Request Money</p>
+                </div>
+                <div class="box">
+                    <img src="icons/image-6.png" alt="Image 6" class="box-img">
+                    <p class="box-text">Right Click</p>
+                </div>
             </div>
         </div>
         
-       
-        
-    
+        <!-- Stacked Images Section -->
+        <div class="stacked-images-container">
+            <img src="pay-images/slide-1.png" alt="Image 1" class="stacked-image" id="image-1">
+            <img src="pay-images/slide-2.png" alt="Image 2" class="stacked-image hide" id="image-2">
         </div>
+        
+        
         <div class="bottom-slider" id="slider">
             <!-- Content inside the slider -->
             <div class="slider-content">
@@ -66,18 +70,8 @@
             </div>
         </div>
         
-        
-        
-        
-        
-        
-    </div>
-        
-        
     </div>
 
-    <!-- Stacked Images Section -->
-   
     <script src="pay.js"></script>
 </body>
 </html>

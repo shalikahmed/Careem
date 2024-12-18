@@ -15,23 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500); // Match this duration with the CSS transition
     });
 });
-const stackedImages = document.querySelectorAll('.stacked-img');
-let currentImageIndex = 0;
-
-function navigateStack(direction) {
-    // Hide current image
-    stackedImages[currentImageIndex].style.zIndex = 1;
-    stackedImages[currentImageIndex].style.transform = 'translate(-30px, 30px) scale(0.9)';
-    stackedImages[currentImageIndex].style.opacity = 0.7;
-
-    // Update current image index
-    currentImageIndex = (currentImageIndex + direction + stackedImages.length) % stackedImages.length;
-
-    // Show the next image
-    stackedImages[currentImageIndex].style.zIndex = 2;
-    stackedImages[currentImageIndex].style.transform = 'translate(0, 0) scale(1)';
-    stackedImages[currentImageIndex].style.opacity = 1;
-}
 const slider = document.getElementById('slider');
 const handle = document.querySelector('.slider-handle');
 const content = document.querySelector('.slider-content');
@@ -110,5 +93,49 @@ function checkSliderPosition() {
 
         // Example: change background color when slider is closed
         // slider.style.backgroundColor = 'red';
+    }
+}
+let currentImage = 1;
+
+document.querySelector("#image-1").addEventListener("touchstart", startSwipe);
+document.querySelector("#image-2").addEventListener("touchstart", startSwipe);
+
+function startSwipe(event) {
+    event.preventDefault();
+
+    const image1 = document.querySelector("#image-1");
+    const image2 = document.querySelector("#image-2");
+
+    // Add swipe functionality
+    const touchStart = event.touches[0].clientX;
+
+    event.target.addEventListener("touchmove", moveSwipe);
+
+    event.target.addEventListener("touchend", endSwipe);
+
+    function moveSwipe(event) {
+        const touchEnd = event.touches[0].clientX;
+        const deltaX = touchStart - touchEnd;
+
+        if (deltaX > 50) {  // If the swipe is significant (left swipe)
+            if (event.target.id === "image-1") {
+                // Slide Image 1 out to the left
+                image1.classList.add("hide");
+                image2.classList.remove("hide");
+                image2.style.top = "0";  // Move Image 2 to the top
+                image1.style.top = "100%"; // Move Image 1 to the bottom
+            } else if (event.target.id === "image-2") {
+                // Slide Image 2 out to the left
+                image2.classList.add("hide");
+                image1.classList.remove("hide");
+                image1.style.top = "0";  // Move Image 1 back to the top
+                image2.style.top = "100%";  // Move Image 2 back to the bottom
+            }
+        }
+    }
+
+    function endSwipe() {
+        event.target.removeEventListener("touchmove", moveSwipe);
+        event.target.removeEventListener("touchend", endSwipe);
     }
 }
