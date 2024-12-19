@@ -95,6 +95,7 @@ function checkSliderPosition() {
         // slider.style.backgroundColor = 'red';
     }
 }
+
 let currentImage = 1;
 
 document.querySelector("#image-1").addEventListener("touchstart", startSwipe);
@@ -116,7 +117,7 @@ function startSwipe(event) {
     function moveSwipe(event) {
         const touchEnd = event.touches[0].clientX;
         const deltaX = touchStart - touchEnd;
-
+    
         if (deltaX > 50) {  // If the swipe is significant (left swipe)
             if (event.target.id === "image-1") {
                 // Slide Image 1 out to the left
@@ -131,11 +132,28 @@ function startSwipe(event) {
                 image1.style.top = "0";  // Move Image 1 back to the top
                 image2.style.top = "100%";  // Move Image 2 back to the bottom
             }
+            updateProgressBar(); // Call the function to update progress dots
         }
     }
-
+    
     function endSwipe() {
         event.target.removeEventListener("touchmove", moveSwipe);
         event.target.removeEventListener("touchend", endSwipe);
+    }
+}
+function updateProgressBar() {
+    const image1 = document.querySelector("#image-1");
+    const image2 = document.querySelector("#image-2");
+    const dot1 = document.querySelector("#dot-1");
+    const dot2 = document.querySelector("#dot-2");
+
+    if (!image1.classList.contains("hide")) {
+        // Image 1 is visible
+        dot1.classList.add("active");
+        dot2.classList.remove("active");
+    } else if (!image2.classList.contains("hide")) {
+        // Image 2 is visible
+        dot1.classList.remove("active");
+        dot2.classList.add("active");
     }
 }
