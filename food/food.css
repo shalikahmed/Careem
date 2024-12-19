@@ -871,3 +871,116 @@ h3 {
 .r-distance {
     font-size: 14px;
 }
+/* Styling specific images using alt attribute */
+.icon-image[alt="Offers"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="GOTYOU"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Burger"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Indian"] {
+    transform: scale(1.3);
+}
+
+.icon-image[alt="Dessert"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Arabic"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Breakfast"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Top Choices"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Italian"] {
+    transform: scale(1.4);
+}
+
+.icon-image[alt="Mandi"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="New Additions"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="North Indian"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Sandwiches & Wraps"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Sushi"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Member Mondays"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Asian"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Healthy"] {
+    transform: scale(1.2);
+}
+
+.icon-image[alt="Lebanese"] {
+    transform: scale(1.2);
+}
+
+.icon-image[alt="Pizza"] {
+    transform: scale(1.4);
+}
+
+.icon-image[alt="Biryani"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Chicken & Wings"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Ice Cream"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Manakish"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Mexican"] {
+    transform: scale(1.4);
+}
+
+.icon-image[alt="Noodles & Ramen"] {
+    transform: scale(1.0);
+}
+
+.icon-image[alt="Pancakes & Bagels"] {
+    transform: scale(1.3);
+}
+
+.icon-image[alt="Shawarma"] {
+    transform: scale(1.4);
+}
+
+.icon-image[alt="Wellness Bowls"] {
+    transform: scale(1.0);
+}
+
