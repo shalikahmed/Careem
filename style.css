@@ -312,9 +312,10 @@ body {
     gap: 10px; /* Increased gap for better spacing */
     overflow-x: auto; /* Enables horizontal scrolling */
     padding-bottom: 10px;
-    scrollbar-width: thin;
     width: 100%; /* Ensure the container takes full width */
     margin-left: 18px;
+    scrollbar-width: none; /* Hide scrollbar for modern browsers */
+
 }
 
 .top-offers-container::-webkit-scrollbar {
@@ -468,7 +469,8 @@ body {
     gap: 15px;
     overflow-x: auto;
     padding-bottom: 10px;
-    scrollbar-width: thin;
+    scrollbar-width: none; /* Hide scrollbar for modern browsers */
+
 }
 
 .pay-cards-container::-webkit-scrollbar {
