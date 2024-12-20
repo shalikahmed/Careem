@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom left, #00E784, #A6EDF2);
+            background-size: 400% 400%; /* Expand for smooth animation */
+            animation: gradient-animation 6s infinite; /* Loop animation */
+        }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: top right;
+            }
+            50% {
+                background-position: bottom left;
+            }
+            100% {
+                background-position: top right;
+            }
+        }
+
+        .splash-content {
+            text-align: center;
+            animation: fade-in 3s;
+        }
+
+        .logo {
+            width: 80%; /* Adjust the size as needed */
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .loading-text {
+            margin-top: 20px;
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-content">
+        <img src="./image/logo.png" alt="Logo" class="logo">
+    </div>
+    <script>
+        // Function to handle redirection
+        function redirectToIndex() {
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 3000); // Small delay for a smoother transition
+        }
+
+        // Check if the splash screen was already shown
+        if (localStorage.getItem('splashShown')) {
+            redirectToIndex(); // Redirect immediately with a short delay
+        } else {
+            // Show splash screen for 3 seconds the first time
+            localStorage.setItem('splashShown', true);
+            setTimeout(() => {
+                redirectToIndex();
+            }, 50000);
+        }
+    </script>
+</body>
+</html>
