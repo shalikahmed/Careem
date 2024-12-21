@@ -125,7 +125,7 @@ body {
 
 /* Image Inside Box */
 .box-img {
-    transform: scale(3.2);
+    transform: scale(5.2);
     max-width: 40%; /* Adjusted image size */
     max-height: 40%; /* Adjusted image size */
     margin: 0 auto;
@@ -181,7 +181,7 @@ body {
     }
 
     .box-img {
-        transform: scale(2); /* Further scale down the image */
+        transform: scale(3); /* Further scale down the image */
         max-width: 30%;
         max-height: 30%;
     }
@@ -193,8 +193,8 @@ body {
     }
 
     .box-text {
-        font-size: 6px; /* Further reduce font size */
-        margin-top: 5px;
+        font-size: 10px; /* Further reduce font size */
+        margin-top: 15px;
     }
 }
 
