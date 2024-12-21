@@ -95,6 +95,7 @@ function checkSliderPosition() {
         // slider.style.backgroundColor = 'red';
     }
 }
+
 let currentImage = 1;
 
 document.querySelector("#image-1").addEventListener("touchstart", startSwipe);
@@ -116,7 +117,7 @@ function startSwipe(event) {
     function moveSwipe(event) {
         const touchEnd = event.touches[0].clientX;
         const deltaX = touchStart - touchEnd;
-
+    
         if (deltaX > 50) {  // If the swipe is significant (left swipe)
             if (event.target.id === "image-1") {
                 // Slide Image 1 out to the left
@@ -131,11 +132,80 @@ function startSwipe(event) {
                 image1.style.top = "0";  // Move Image 1 back to the top
                 image2.style.top = "100%";  // Move Image 2 back to the bottom
             }
+            updateProgressBar(); // Call the function to update progress dots
         }
     }
-
+    
     function endSwipe() {
         event.target.removeEventListener("touchmove", moveSwipe);
         event.target.removeEventListener("touchend", endSwipe);
     }
+}
+function updateProgressBar() {
+    const image1 = document.querySelector("#image-1");
+    const image2 = document.querySelector("#image-2");
+    const dot1 = document.querySelector("#dot-1");
+    const dot2 = document.querySelector("#dot-2");
+
+    if (!image1.classList.contains("hide")) {
+        // Image 1 is visible
+        dot1.classList.add("active");
+        dot2.classList.remove("active");
+    } else if (!image2.classList.contains("hide")) {
+        // Image 2 is visible
+        dot1.classList.remove("active");
+        dot2.classList.add("active");
+    }
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const navLinksContainer = document.getElementById('nav-links-container');
+
+    // Open menu
+    hamburgerMenu.addEventListener('click', () => {
+        navLinksContainer.style.top = '0'; // Slide down
+    });
+
+    // Close menu
+    closeMenu.addEventListener('click', () => {
+        navLinksContainer.style.top = '-100%'; // Slide up
+    });
+});
+// Get elements
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const navLinksContainer = document.getElementById('nav-links-container');
+const overlay = document.getElementById('overlay');
+const closeButton = document.getElementById('close-menu');
+
+// Function to open the menu
+function openMenu() {
+    navLinksContainer.classList.add('open');
+    overlay.classList.add('visible');
+}
+
+// Function to close the menu and overlay
+function closeMenu() {
+    navLinksContainer.classList.remove('open');
+    overlay.classList.remove('visible');
+}
+
+// Open menu when hamburger icon is clicked
+hamburgerMenu.addEventListener('click', openMenu);
+
+// Close menu when close button is clicked
+closeButton.addEventListener('click', closeMenu);
+
+// Close menu when overlay (blurred screen) is clicked
+overlay.addEventListener('click', closeMenu);
+
+// Close menu when clicking anywhere outside the nav menu and hamburger button
+document.addEventListener('click', function(event) {
+    // Check if the click is outside the menu and hamburger button
+    if (!navLinksContainer.contains(event.target) && !hamburgerMenu.contains(event.target) && !closeButton.contains(event.target)) {
+        closeMenu();
+    }
+});
+if (window.innerWidth <= 768) { // Check if the device is mobile
+    navLinksContainer.style.top = "-100%"; // Hide the menu on load for mobile
 }

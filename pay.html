@@ -21,6 +21,18 @@
                     <button class="hamburger-menu">&#9776;</button>
                 </div>
             </div>
+            <div class="overlay" id="overlay"></div>
+
+            <!-- Hamburger Menu Content -->
+            <div class="nav-links-container" id="nav-links-container">
+                <button id="close-menu" class="close-menu">&times;</button>
+                <ul class="nav-links">
+                    <li><img src="../image/home-icon.png" alt="Home Icon" class="nav-icon"><a href="#home">Home</a></li>
+                    <li><img src="../image/help-icon.png" alt="Help Icon" class="nav-icon"><a href="#help">Help</a></li>
+                    <li><img src="../image/activities-icon.png" alt="Activities Icon" class="nav-icon"><a href="#activities">Activities</a></li>
+                    <li><img src="../image/profile-icon.png" alt="Profile Icon" class="nav-icon"><a href="#profile">Profile</a></li>
+                </ul>
+            </div>
 
             <!-- Boxes Container -->
             <div class="boxes-container">
@@ -56,7 +68,14 @@
             <img src="pay-images/slide-1.png" alt="Image 1" class="stacked-image" id="image-1">
             <img src="pay-images/slide-2.png" alt="Image 2" class="stacked-image hide" id="image-2">
         </div>
-        
+        <div class="progress-bar">
+            <div class="dot active" id="dot-1"></div>
+            <div class="dot" id="dot-2"></div>
+        </div>
+        <div class="terms-button-container">
+            <img src="pay-images/pay-logo.png" alt="Pay Icon" class="terms-icon">
+            <span class="terms-text">Terms and Conditions</span>
+        </div>
         
         <div class="bottom-slider" id="slider">
             <!-- Content inside the slider -->
@@ -69,8 +88,11 @@
                 <button class="add-card-btn">Add a card</button>
             </div>
         </div>
-        
+      
     </div>
+    <!-- Terms and Conditions Button -->
+
+
 
     <script src="pay.js"></script>
 </body>
